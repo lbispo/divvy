@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+	
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Sessile Lite: a CSS layout library</title>
+		
+		<link rel="stylesheet" href="css/narrow.css">
+		<link rel="stylesheet" href="css/medium.css" media="screen and (min-width: 40em)">
+		<link rel="stylesheet" href="css/wide.css" media="screen and (min-width: 60em)">
+		
+		<link rel="stylesheet" href="css/theme.css"><!-- only to make this sample page more readable -->
+		
+	</head>
+	
+	<body class="fixed nav top bottom">
+	
+		<nav>
+			<ul>
+				<li>top fixed nav</li>
+				<li>top fixed nav</li>
+				<li>top fixed nav</li>
+			</ul>
+		</nav>
+
+		<div class="universal global nav">
+	
+			<header role="banner">
+				<h1 id="site-id">Sessile: Lite;</h1>
+				<p class="tagline">The <em>sessible</em> CSS layout library.</p>
+			</header>
+		
+			<main role="main" class="one fourth right local nav">
+				
+				<div id="wrap">
+				
+					<h2>Layouts that wrap</h2>
+					
+					<header>
+						<h3>That&rsquo;s a wrap</h3>
+						<p>Test these layouts in narrow, medium and wide views!</p>
+					</header>
+					
+					<p>Give an element a <code>class="wrap"</code> to wrap its children elements across rows. To do this, the children elements will have to be given a base width by using the <code>flex-basis</code> property (make sure you duplicate this with a <code>-webkit-</code> prefix for poor Safari) &ndash; or you can simply use left and right padding or margin. If you do this, the <code>.wrap</code> items will render a fluid flow of content across multiple rows, without following any particular grid structure.</p>
+
+					<p>The last row, even if containing fewer elements than other rows, will fill the available width of the parent.</p>
+					
+					<article class="halves">
+						
+						<section>
+							<h4>ul.wrap</h4>
+							<nav>
+								<ul class="wrap">
+									<li>Wrapping item 1.</li>
+									<li>Wrapping item 2.</li>
+									<li>Wrapping item 3.</li>
+									<li>Wrapping item 4.</li>
+								</ul>
+							</nav>
+						</section>
+						
+						<section>
+							<h4>ul.wrap.reverse</h4>
+							<nav>
+								<ul class="wrap persistent reverse">
+									<li>Wrapping item 1.</li>
+									<li>Wrapping item 2.</li>
+									<li>Wrapping item 3.</li>
+									<li>Wrapping item 4.</li>
+								</ul>
+							</nav>
+						</section>
+						
+						<section>
+							<h4>ul.wrap.persistent</h4>
+							<nav>
+								<ul class="wrap persistent">
+									<li>A wrap.</li>
+									<li>A wrap.</li>
+									<li>A wrap.</li>
+									<li>A wrap.</li>
+									<li>A wrap.</li>
+									<li>A wrap.</li>
+									<li>A wrap.</li>
+								</ul>
+							</nav>
+						</section>
+						
+						<section>
+							<h4>ul.wrap.persistent.wide</h4>
+							<nav>
+								<ul class="wrap persistent wide">
+									<li>Wrap.</li>
+									<li>Wrap.</li>
+									<li>Wrap.</li>
+									<li>Wrap.</li>
+									<li>Wrap.</li>
+									<li>Wrap.</li>
+									<li>Wrap.</li>
+								</ul>
+							</nav>
+						</section>
+						
+					</article>
+					
+					<h5>Hey, pretty easy, huh?</h5>
+					
+					<p><a href="#top">Top of the page, ma!</a></p>
+					
+				</div><!-- end wrap -->
+				
+				<div id="defined-wrap">
+				
+					<h2>Layouts that wrap</h2>
+					
+					<header>
+						<h3>Defined wrapping layouts</h3>
+						<p>Test these out in medium and wide views!</p>
+					</header>
+					
+					<p>These are columnar layouts that repeat across rows. They do not require the use of the <code>wrap</code> class (although they can be used together &ndash; see the last example on this page), but rather one or more classes defining the column structure. The classes will include a basic division of the parent width, sometimes a multiple of those divisions, and sometimes also a direction. Examples:</p>
+
+					<pre><code>&lt;article class="fourths"&gt;&lt;/article&gt;
+&lt;article class="two fourths"&gt;&lt;/article&gt;
+&lt;section class="two thirds right"&gt;&lt;/article&gt;
+&lt;section class="six sevenths left"&gt;&lt;/article&gt;
+</code></pre>
+
+					<p>Browse through this section for more examples.</p>
+					
+					<article class="halves header">
+					
+						<header>
+							<h4>article.halves.header</h4>
+						</header>
+						
+						<div class="truncate">
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+						</div>
+						
+						<div>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions.</p>
+						</div>
+						
+					</article>
+					
+					<article class="thirds header">
+						
+						<header>
+							<h4>article.thirds.header</h4>
+						</header>
+						
+						<div class="truncate">
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+						</div>
+						
+						<div>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions.</p>
+						</div>
+					
+						<div class="ducky">
+							<p>1 Ducky.</p>
+						</div>
+						
+					</article>
+					
+					<article class="fourths header">
+						
+						<header>
+							<h4>article.fourths.header</h4>
+						</header>
+					
+						<div class="truncate">
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+						</div>
+					
+						<div class="ducky">
+							<p>1 Ducky.</p>
+						</div>
+					
+						<div class="ducky">
+							<p>2 Ducky.</p>
+						</div>
+					
+						<div class="ducky">
+							<p>3 Ducky.</p>
+						</div>
+						
+					</article>
+						
+					<p>&hellip; et cetera, all the way up to:</p>
+					
+					<article class="ninths">
+					
+						<div class="ducky">
+							<p>1 Ducky.</p>
+						</div>
+					
+						<div class="ducky">
+							<p>2 Ducky.</p>
+						</div>
+					
+						<div class="ducky">
+							<p>3 Ducky.</p>
+						</div>
+					
+						<div class="ducky">
+							<p>4 Ducky.</p>
+						</div>
+					
+						<div class="ducky">
+							<p>5 Ducky.</p>
+						</div>
+					
+						<div class="ducky">
+							<p>6 Ducky.</p>
+						</div>
+					
+						<div class="ducky">
+							<p>7 Ducky.</p>
+						</div>
+					
+						<div class="ducky">
+							<p>8 Ducky.</p>
+						</div>
+					
+						<div class="ducky">
+							<p>9 Ducky.</p>
+						</div>
+						
+					</article>
+					
+					<header>
+						<h5>One on the right!</h5>
+					</header>
+				
+					<article class="phi left header">
+					
+						<header>
+							<h4>article.phi.left.header</h4>
+						</header>
+				
+						<section>
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions.</p>
+						</section>
+				
+						<div class="ducky">
+							<p>1 ducky.</p>
+						</div>
+			
+					</article>
+				
+					<article class="two thirds left header">
+					
+						<header>
+							<h4>article.two.thirds.left.header</h4>
+						</header>
+				
+						<section>
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions.</p>
+						</section>
+				
+						<div class="ducky">
+							<p>1 ducky.</p>
+						</div>
+			
+					</article>
+				
+					<article class="three fourths left header">
+					
+						<header>
+							<h4>article.three.fourths.left.header</h4>
+						</header>
+				
+						<section>
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions.</p>
+						</section>
+				
+						<div class="ducky">
+							<p>1 ducky.</p>
+						</div>
+			
+					</article>
+				
+					<article class="four fifths left header">
+					
+						<header>
+							<h4>article.four.fifths.left.header</h4>
+						</header>
+				
+						<section>
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions.</p>
+						</section>
+				
+						<div class="ducky">
+							<p>1 ducky.</p>
+						</div>
+			
+					</article>
+					
+					<p>&hellip; et cetera, all the way up to:</p>
+				
+					<article class="eight ninths left header">
+					
+						<header>
+							<h4>article.eight.ninths.left.header</h4>
+						</header>
+				
+						<section>
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions.</p>
+						</section>
+				
+						<div class="ducky">
+							<p>1 ducky.</p>
+						</div>
+			
+					</article>
+					
+					<header>
+						<h5>And one on the left!</h5>
+					</header>
+				
+					<article class="phi right header">
+					
+						<header>
+							<h4>article.phi.right.header</h4>
+						</header>
+				
+						<div class="ducky">
+							<p>1 ducky.</p>
+						</div>
+				
+						<section>
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions.</p>
+						</section>
+			
+					</article>
+				
+					<article class="two thirds right header">
+					
+						<header>
+							<h4>article.two.thirds.right.header</h4>
+						</header>
+				
+						<div class="ducky">
+							<p>1 ducky.</p>
+						</div>
+				
+						<section>
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions.</p>
+						</section>
+			
+					</article>
+					
+					<p>&hellip; et cetera, all the way up to:</p>
+				
+					<article class="eight ninths right header">
+					
+						<header>
+							<h4>article.eight.ninths.right.header</h4>
+						</header>
+				
+						<div class="ducky">
+							<p>1 ducky.</p>
+						</div>
+				
+						<section>
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions.</p>
+						</section>
+			
+					</article>
+					
+					<header>
+						<h5>Two on the side!</h5>
+					</header>
+				
+					<article class="two fourths header">
+					
+						<header>
+							<h4>article.two.fourths.header</h4>
+						</header>
+				
+						<div class="ducky">
+							<p>1 ducky.</p>
+						</div>
+				
+						<section>
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions.</p>
+						</section>
+				
+						<div class="ducky">
+							<p>2 ducky.</p>
+						</div>
+			
+					</article>
+				
+					<article class="three fifths header">
+					
+						<header>
+							<h4>article.three.fifths.header</h4>
+						</header>
+				
+						<div class="ducky">
+							<p>1 ducky.</p>
+						</div>
+				
+						<section>
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions.</p>
+						</section>
+				
+						<div class="ducky">
+							<p>2 ducky.</p>
+						</div>
+			
+					</article>
+				
+					<article class="four sixths header">
+					
+						<header>
+							<h4>article.four.sixths.header</h4>
+						</header>
+				
+						<div class="ducky">
+							<p>1 ducky.</p>
+						</div>
+				
+						<section>
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions.</p>
+						</section>
+				
+						<div class="ducky">
+							<p>2 ducky.</p>
+						</div>
+			
+					</article>
+					
+					<p>&hellip; et cetera, all the way up to:</p>
+				
+					<article class="seven ninths header">
+					
+						<header>
+							<h4>article.seven.ninths.header</h4>
+						</header>
+				
+						<div class="ducky">
+							<p>1 ducky.</p>
+						</div>
+				
+						<section>
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions.</p>
+						</section>
+				
+						<div class="ducky">
+							<p>2 ducky.</p>
+						</div>
+			
+					</article>
+					
+					<header>
+						<h5>Without headings!</h5>
+					</header>
+					
+					<p>You may have noticed a lot of these have an additional class of <code>header</code> or <code>footer</code>. These classes ensure that the first and/or last elements within a layout have a width of 100%. These layouts work just fine without headers or footers too:</p>
+				
+					<article class="two fourths">
+				
+						<div class="ducky">
+							<p>1 ducky.</p>
+						</div>
+				
+						<section>
+							<h4>article.two.fourths</h4>
+							<p>Ahoy!</p>
+						</section>
+				
+						<div class="ducky">
+							<p>2 ducky.</p>
+						</div>
+			
+					</article>
+				
+					<article class="six sevenths left">
+				
+						<section>
+							<h4>article.six.sevenths.left</h4>
+							<p>Ahoy!</p>
+						</section>
+				
+						<div class="ducky">
+							<p>1 ducky.</p>
+						</div>
+			
+					</article>
+					
+					<p>&hellip; et cetera.</p>
+					
+					<header>
+						<h4>Reversed content!</h4>
+						<p>You can reverse the flow of a defined layout element by adding a class of <code>reverse</code>.</p>
+					</header>
+					
+					<article class="one third left">
+					
+						<div class="ducky">
+							<p>1 Ducky.</p>
+						</div>
+						
+						<section>
+							<h4>.two.thirds.right,</h4>
+							<ul>
+								<li>You&rsquo;re the one.</li>
+								<li>You make bathtime.</li>
+								<li>Lots of fun.</li>
+							</ul>
+							<p><a href="http://www.sesamestreet.org/parents/theshow/watch/songs" target="_blank" title="Sesame Street">More</a> great classics and newer hits!</p>
+						</section>
+						
+					</article>
+					
+					<article class="one third left reverse">
+					
+						<div class="ducky">
+							<p>1 Ducky.</p>
+						</div>
+						
+						<section>
+							<h4>.two.thirds.right.reverse,</h4>
+							<ul>
+								<li>You&rsquo;re the one.</li>
+								<li>You make bathtime.</li>
+								<li>Lots of fun.</li>
+							</ul>
+							<p><a href="http://www.sesamestreet.org/parents/theshow/watch/songs" target="_blank" title="Sesame Street">More</a> great classics and newer hits!</p>
+						</section>
+						
+					</article>
+					
+					<header>
+						<h4>Using wrap in combination with a defined wrapping layout</h4>
+						<p>Test these out in narrow and medium views:</p>
+					</header>
+					
+					<p>To give elements a layout in both narrow and wide view, try using a combination of <code>wrap</code> and one of the defined wrapping layouts.</p>
+
+					<p>(Because of a conflict of class names, this may not work with <code>row</code> &ndash; or, at least, can cause some unexpected results.)</p>
+					
+					<article class="wrap two thirds left header">
+					
+						<header>
+							<h4>article.wrap.two.thirds.left.header</h4>
+						</header>
+				
+						<section>
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions.</p>
+						</section>
+				
+						<div class="ducky">
+							<p>1 ducky.</p>
+						</div>
+			
+					</article>
+					
+					<p><a href="#top">Top of the page, ma!</a></p>
+					
+				</div><!-- end defined-wrap -->
+				
+				<div id="one-column">
+				
+					<h2>Layouts that wrap</h2>
+					
+					<h3>One column layouts</h3>
+					
+					<header>
+						<h4>section.one &hellip;</h4>
+						<p>Check these out in narrow views!</p>
+					</header>
+					
+					<p>Sometimes you want a single element to align itself left or right, with all elements after (or sometimes before) to align themselves on the opposite side. These are the only layouts that use <code>float</code> instead of <code>flex</code>, and are simple to accomplish in Sessile. Just give the parent element a class of <code>.one</code>, plus whatever division you would like. Examples:</p>
+
+					<pre><code>&lt;section class="one third left"&gt;&lt;/section&gt;
+&lt;article class="one fifth right"&gt;&lt;/article&gt;
+</code></pre>
+
+<p><strong>Warning:</strong> the <code>one</code> class does not play nicely with the <code>header</code> class. Bad ducky!</p>
+					
+					<article class="fourths">
+					
+						<section class="one third left">
+							<img src="http://sessile.net/images/ducky.png" alt="Rubber ducky">
+							<div>
+								<h4>.one.third.left,</h4>
+								<ul>
+									<li>You&rsquo;re the one.</li>
+									<li>You make bathtime.</li>
+									<li>Lots of fun.</li>
+								</ul>
+								<p><a href="http://www.sesamestreet.org/parents/theshow/watch/songs" target="_blank" title="Sesame Street">More</a> great classics and newer hits!</p>
+							</div>
+						</section>
+					
+						<section class="one third right">
+							<img src="http://sessile.net/images/ducky.png" alt="Rubber ducky">
+							<div>
+								<h4>.one.third.right,</h4>
+								<ul>
+									<li>You&rsquo;re the one.</li>
+									<li>You make bathtime.</li>
+									<li>Lots of fun.</li>
+								</ul>
+								<p><a href="http://www.sesamestreet.org/parents/theshow/watch/songs" target="_blank" title="Sesame Street">More</a> great classics and newer hits!</p>
+							</div>
+						</section>
+					
+						<section class="one fourth right">
+							<img src="http://sessile.net/images/ducky.png" alt="Rubber ducky">
+							<div>
+								<h4>.one.fourth.right,</h4>
+								<ul>
+									<li>You&rsquo;re the one.</li>
+									<li>You make bathtime.</li>
+									<li>Lots of fun.</li>
+								</ul>
+								<p><a href="http://www.sesamestreet.org/parents/theshow/watch/songs" target="_blank" title="Sesame Street">More</a> great classics and newer hits!</p>
+							</div>
+						</section>
+					
+						<section class="one ninth right">
+							<img src="http://sessile.net/images/ducky.png" alt="Rubber ducky">
+							<div>
+								<h4>.one.ninth.right,</h4>
+								<ul>
+									<li>You&rsquo;re the one.</li>
+									<li>You make bathtime.</li>
+									<li>Lots of fun.</li>
+								</ul>
+								<p><a href="http://www.sesamestreet.org/parents/theshow/watch/songs" target="_blank" title="Sesame Street">More</a> great classics and newer hits!</p>
+							</div>
+						</section>
+			
+					</article>
+					
+					<p>Check these out in medium and wide views!</p>
+			
+					<article class="one ninth right truncate">
+					
+						<header>
+							<h4>.one.ninth.right</h4>
+						</header>
+				
+						<section>
+							<h5>Ahoy!</h5>
+						</section>
+				
+						<section>
+							<h5>Ahoy!</h5>
+						</section>
+				
+						<section>
+							<h5>Ahoy!</h5>
+						</section>
+			
+					</article>
+			
+					<article class="one fourth left">
+					
+						<header>
+							<h4>.one.fourth.left</h4>
+						</header>
+				
+						<section>
+							<h5>Ahoy!</h5>
+						</section>
+				
+						<section>
+							<h5>Ahoy!</h5>
+						</section>
+				
+						<section>
+							<h5>Ahoy!</h5>
+						</section>
+			
+					</article>
+					
+					<h3>Check out this page in wide views!</h3>
+					
+					<p>This HTML document has a class group of <code>one fourth left</code> applied to the <code>main</code> element. Pull the window out to a wide view and take a look!</p>
+
+						<h4>The wide layout code on this page:</h4>
+
+						<pre><code>&lt;main class="one fourth left"&gt;
+    &lt;aside&gt;&lt;/aside&gt;
+    &lt;div&gt;&lt;/div&gt;
+    ... &lt;!-- multiple divs --&gt;
+    &lt;footer&gt;&lt;/footer&gt;
+&lt;/main&gt;
+</code></pre>
+
+					</article>
+
+					<p><strong>Warning:</strong> The one-column layouts will not work <em>in the narrow view only</em> in Internet Explorer (as of this writing). Also, images may scale strangely in the narrow view in IE. Sessile regretfully decided against drastically enlarging the code for the sake of just this one browser &ndash; so until it (the browser, not Sessile) decides to start playing nicely like the others (or until Sessile finds another solution), its users will receive a slightly reduced user experience. Sorry about that!</p>
+					
+					<p><a href="#top">Top of the page, ma!</a></p>
+				
+				</div><!-- end one-column layouts -->
+				
+				<div id="row-grid">
+				
+					<h2>Layouts that don&rsquo;t wrap</h2>
+					
+					<header>
+						<h3>Row, row, <a href="http://abcnews.go.com/Entertainment/video/steve-carell-paul-rudd-sing-row-row-row-11228035" target="_blank">row</a></h3>
+						<p>Test these out in narrow views!</p>
+					</header>
+					
+					<p>Give an element a <code>class="row"</code> to render its child elements horizontally within a single row.</p>
+
+					<p>With that single class, child elements will each take up the same width, no matter how many they are. That&rsquo;s right &ndash; as many as you want! (But try not to break the browser, okay?)</p>
+
+					<p>Give the parent element <code>padding-left</code> and/or <code>padding-right</code> to add space on either side, or both.</p>
+					
+					<article class="fifths header">
+						
+						<header>
+							<h4>ul.row</h4>
+						</header>
+						
+						<nav>
+							<ul class="row">
+								<li>1 Ducky.</li>
+							</ul>
+						</nav>
+						<nav>
+							<ul class="row">
+								<li>1 Ducky.</li>
+								<li>2 Ducky.</li>
+							</ul>
+						</nav>
+						<nav>
+							<ul class="row">
+								<li>1 Ducky.</li>
+								<li>2 Ducky.</li>
+								<li>3 Ducky.</li>
+							</ul>
+						</nav>
+						<nav>
+							<ul class="row">
+								<li>1 Ducky.</li>
+								<li>2 Ducky.</li>
+								<li>3 Ducky.</li>
+								<li>4 Ducky.</li>
+							</ul>
+						</nav>
+						<nav>
+							<ul class="row">
+								<li>1 Ducky.</li>
+								<li>2 Ducky.</li>
+								<li>3 Ducky.</li>
+								<li>4 Ducky.</li>
+								<li>5 Ducky.</li>
+							</ul>
+						</nav>
+						
+					</article>
+					
+					<article>
+					
+						<nav>
+							<h4>ul.row.persistent</h4>
+							<ul class="row persistent">
+								<li>1 Ducky.</li>
+								<li>2 Ducky.</li>
+								<li>3 Ducky.</li>
+								<li>4 Ducky.</li>
+								<li>5 Ducky.</li>
+							</ul>
+						</nav>
+						
+					</article>
+					
+					<article>
+					
+						<nav>
+							<h4>ul.row.persistent.wide</h4>
+							<ul class="row persistent wide">
+								<li>1 Ducky.</li>
+								<li>2 Ducky.</li>
+								<li>3 Ducky.</li>
+								<li>4 Ducky.</li>
+								<li>5 Ducky.</li>
+							</ul>
+						</nav>
+						
+					</article>
+					
+					<article>
+					
+						<nav>
+							<h4>ul.row.reverse</h4>
+							<ul class="row reverse persistent wide">
+								<li>1 Ducky.</li>
+								<li>2 Ducky.</li>
+								<li>3 Ducky.</li>
+								<li>4 Ducky.</li>
+								<li>5 Ducky.</li>
+							</ul>
+						</nav>
+						
+					<blockquote>Et sessila, et sessila, <a href="https://www.youtube.com/watch?v=1JHH6iwgIek" target="_blank">et sessila&hellip;</a></blockquote>
+						
+					</article>
+					
+					<header>
+						<h5>Startings and endings</h5>
+						<p><code>flex-basis</code> widths were given to these list items in theme.css.</p>
+					</header>
+
+					<p>If you have a limited number of layout items that you want to on the left or right side of a parent element, give it a class of <code>start</code> or <code>end</code>, respectively. You will have to give the items a width in your theme.</p>
+					
+					<article class="halves">
+						
+						<section>
+							<h4>ul.start</h4>
+							<ul class="start">
+								<li><a href="">Link</a></li>
+								<li><a href="">Link</a></li>
+								<li><a href="">Link</a></li>
+							</ul>
+						</section>
+						
+						<section>
+							<h4>ul.start.persistent</h4>
+							<ul class="start persistent">
+								<li><a href="">Link</a></li>
+								<li><a href="">Link</a></li>
+								<li><a href="">Link</a></li>
+							</ul>
+						</section>
+						
+						<section>
+							<h4>ul.start.persistent.wide</h4>
+							<ul class="start persistent wide">
+								<li><a href="">Link</a></li>
+								<li><a href="">Link</a></li>
+								<li><a href="">Link</a></li>
+							</ul>
+						</section>
+						
+						<section>
+							<h4>ul.end</h4>
+							<ul class="end">
+								<li><a href="">Link</a></li>
+								<li><a href="">Link</a></li>
+								<li><a href="">Link</a></li>
+								<li><a href="">Link</a></li>
+								<li><a href="">☰</a></li>
+							</ul>
+						</section>
+						
+					</article>
+					
+					<p><a href="#top">Top of the page, ma!</a></p>
+					
+				</div><!-- end row grid -->
+				
+				<div id="defined-row">
+				
+					<h2>Layouts that don&rsquo;t wrap</h2>
+					
+					<h3>Defined row layouts</h3>
+					
+					<header>
+						<h4>Some examples in lists</h4>
+						<h5>Test these out in narrow views!</h5>
+					</header>
+					
+					<p>Certain defined layouts are possible used in conjunction with the <code>row</code> class. Because all items are within a single row, things are quite flexible: there&rsquo;s no need to specify particular widths or divisions. Examples:</p>
+
+					<pre><code>&lt;ul class="row two left"&gt;&lt;/ul&gt;
+</code></pre>
+
+					<p>In this layout, no matter how many <code>li</code>s are contained, the first will have twice the width of the others: so, if there are three <code>li</code>s, the first will be 50% width (the other two being 25% each); if four <code>li</code>s, it will be 40% width (the other three being 20% each); and so on.</p>
+					
+					<article class="fourths">
+					
+						<section>
+							<h4>ul.row.two.left</h4>
+							<nav>
+								<ul class="row two left">
+									<li><strong>Heading</strong></li>
+									<li><a href="">Link</a></li>
+									<li><a href="">Link</a></li>
+									<li><a href="">Link</a></li>
+								</ul>
+							</nav>
+						</section>
+					
+						<section>
+							<h4>ul.row.three.left</h4>
+							<nav>
+								<ul class="row three left">
+									<li><strong>Heading</strong></li>
+									<li><a href="">Link</a></li>
+									<li><a href="">Link</a></li>
+								</ul>
+							</nav>
+						</section>
+					
+						<section>
+							<h4>ul.row.eight.left</h4>
+							<nav>
+								<ul class="row eight left">
+									<li><strong>Heading</strong></li>
+									<li><a href="">Link</a></li>
+								</ul>
+							</nav>
+						</section>
+					
+						<section>
+							<h4>ul.row.eight.right</h4>
+							<nav>
+								<ul class="row eight right">
+									<li><a href="">Link</a></li>
+									<li><strong>Heading</strong></li>
+								</ul>
+							</nav>
+						</section>
+						
+					</article>
+					
+					<header>	
+						<h5>The old one-two (or one-three, etc.):</h5>
+					</header>
+					
+					<p>It is also possible to combine two numbers, e.g.:</p>
+
+					<pre><code>&lt;ul class="row one-three right"&gt;&lt;/ul&gt;
+</code></pre>
+
+					<p>In this layout, it is the <em>second</em> <code>li</code> from the <em>right</em> side that will be three times the width of the other items &ndash; again, no matter how many there are.</p>
+					
+					<article class="fifths">
+					
+						<section>
+							<h4>ul.row.one-two.left</h4>
+							<p>with four items:</p>
+							<nav>
+								<ul class="row one-two left">
+									<li><a href="">Link</a></li>
+									<li><strong>Heading</strong></li>
+									<li><a href="">Link</a></li>
+									<li><a href="">Link</a></li>
+								</ul>
+							</nav>
+						</section>
+					
+						<section>
+							<h4>ul.row.one-two.left</h4>
+							<p>with five items:</p>
+							<nav>
+								<ul class="row one-two left">
+									<li><a href="">Link</a></li>
+									<li><strong>Heading</strong></li>
+									<li><a href="">Link</a></li>
+									<li><a href="">Link</a></li>
+									<li><a href="">Link</a></li>
+								</ul>
+							</nav>
+						</section>
+					
+						<section>
+							<h4>ul.row.one-two.left</h4>
+							<p>with six items:</p>
+							<nav>
+								<ul class="row one-two left">
+									<li><a href="">Link</a></li>
+									<li><strong>Heading</strong></li>
+									<li><a href="">Link</a></li>
+									<li><a href="">Link</a></li>
+									<li><a href="">Link</a></li>
+									<li><a href="">Link</a></li>
+								</ul>
+							</nav>
+						</section>
+					
+						<section>
+							<h4>ul.row.one-three.left</h4>
+							<nav>
+								<ul class="row one-three left">
+									<li><a href="">Link</a></li>
+									<li><strong>Heading</strong></li>
+									<li><a href="">Link</a></li>
+									<li><a href="">Link</a></li>
+								</ul>
+							</nav>
+						</section>
+					
+						<section>
+							<h4>ul.row.one-three.right</h4>
+							<nav>
+								<ul class="row one-three right">
+									<li><a href="">Link</a></li>
+									<li><strong>Heading</strong></li>
+									<li><a href="">Link</a></li>
+									<li><a href="">Link</a></li>
+								</ul>
+							</nav>
+						</section>
+						
+					</article>
+					
+					<header>
+						<h5>Combinations!</h5>
+					</header>
+					
+					<p><strong>Limitations:</strong> The number combinations are limited to a maximum nine-column grid: the highest single number available is <code>eight</code>, while the largest two-number combination is <code>four-five</code>. Note that larger layouts are possible, however, either by simply adding more items, or through the interesting possibility of using both <code>left</code> and <code>right</code> directions at the same time:</p>
+
+<pre><code>&lt;header class="row four-five left right"&gt;&lt;/header&gt;
+</code></pre>
+
+<p>When using two-number combinations, the second number must be equal or greater than the first.</p>
+					
+					<article class="fourths">
+					
+						<section>
+							<h4>ul.row.two-two.left</h4>
+							<nav>
+								<ul class="row two-two left">
+									<li><strong>Heading</strong></li>
+									<li><strong>Heading</strong></li>
+									<li><a href="">Link</a></li>
+								</ul>
+							</nav>
+						</section>
+					
+						<section>
+							<h4>ul.row.two-three.left</h4>
+							<nav>
+								<ul class="row two-three left">
+									<li><strong>Heading</strong></li>
+									<li><strong>Heading</strong></li>
+									<li>Menu</li>
+								</ul>
+							</nav>
+						</section>
+					
+						<section>
+							<h4>ul.row.two-three.right</h4>
+							<nav>
+								<ul class="row two-three right">
+									<li>Menu</li>
+									<li><strong>Heading</strong></li>
+									<li><a href="">Link</a></li>
+								</ul>
+							</nav>
+						</section>
+					
+						<section>
+							<h4>ul.row.four-five.right</h4>
+							<nav>
+								<ul class="row four-five right">
+									<li>☰</li>
+									<li><strong>Heading</strong></li>
+									<li><a href="">Link</a></li>
+								</ul>
+							</nav>
+						</section>
+						
+					</article>
+					
+					<header>
+						<h5>Left and right, <a href="https://www.youtube.com/watch?v=_S-9n-EHaz8" target="_blank">living together!</a></h5>
+					</header>
+					
+					<article class="halves">
+					
+						<section>
+							<h4>ul.row.two.left.right</h4>
+							<nav>
+								<ul class="row two left right">
+									<li><strong>Heading</strong></li>
+									<li><a href="">Link</a></li>
+									<li><a href="">Link</a></li>
+									<li><a href="">Link</a></li>
+									<li><strong>Heading</strong></li>
+								</ul>
+							</nav>
+						</section>
+					
+						<section>
+							<h4>ul.row.two-three.left.right</h4>
+							<nav>
+								<ul class="row two-three left right">
+									<li><a href="">Link</a></li>
+									<li><strong>Heading</strong></li>
+									<li><a href="">Link</a></li>
+								</ul>
+							</nav>
+						</section>
+						
+					</article>
+					
+					<p><a href="#top">Top of the page, ma!</a></p>
+					
+				</div><!-- end defined-row -->
+				
+				<div id="navigation">
+				
+					<h2>Navigation</h2>
+				
+					<p>In addition to the columnar and wrapped layouts described above, Sessile Lite offers a few navigation solutions &ndash; since navigation layout is also, well, layout.</p>
+
+					<p>Examples used in this page: top fixed nav, bottom fixed nav, universal nav, global nav.</p>
+					
+					<section>
+
+						<h4>Global and universal navigation</h4>
+
+						<p>At times it is desirable to have a navigation element natively positioned at the bottom of the content for handheld-width views, but positioned at top for tablet and desktop-width views. Sessile Lite offers an easy solution: nest a <code>nav</code> element within a parent with a class group of <code>.global.nav</code>, and the <code>nav</code> element will be moved to the top, underneath the top <code>header</code>, for the medium and wide views. Magic!</p>
+
+						<p>Apply a class group of <code>.universal.nav</code> to the parent element, and the <code>nav</code> element will be moved to the top as before, but this time <em>above</em> the header! Or, how about this: two <code>nav</code> elements, both nested inside a parent with <code>.universal.global.nav</code> &ndash; both are moved to the top of the page, the first above the header, the second below the header.</p>
+
+						<p>Awesome.</p>
+
+						<p>For universal or local navigation, you may use either a <code>ul</code> link list, or, as is sometimes done (and is done in the univeral navigation on this sample page), with <code>span</code> elements nested directly inside of the <code>nav</code>.</p>
+					
+					</section>
+					
+					<section>
+					
+						<h4>Local navigation</h4>
+
+						<p>You can also put a <code>nav</code> element as the last child of an element with a class group of <code>local nav</code>, and it will rise to the top of that parent element in medium view, and participate in wide view layouts. A local navigation, unlike global and universal navigation, will not display as a row by default.</p>
+
+					</section>
+					
+					<section>
+
+						<h4>Fixed navigation</h4>
+
+						<p>This one is easy. Place a <code>nav</code> element <em>outside</em> of your container <code>div</code>, directly inside the <code>body</code> element, and that <code>nav</code> will stretch the width of the viewport. Place it just after the opening <code>body</code> tag, and the fixed navigation will be at top; just before the closing <code>body</code> tag, and it will be at the bottom.</p>
+
+						<p>To fix these navigations, add a class of <code>fixed</code> to the parent &ndash; in this case, the <code>body</code> element.* Violá!</p>
+
+						<p>*By default, a bottom fixed navigation remains fixed in narrow view, while a top fixed navigation does not. Too many different top navigation solutions available to the developer for Sessile to start dictating things there. Apply your own solution.</p>
+
+						<h4>The navigation code on this page:</h4>
+
+						<pre><code>&lt;body class="fixed nav top bottom"&gt;
+    &lt;nav&gt;&lt;/nav&gt;&lt;!-- this navigation stretches at top, position fixed in medium and large views --&gt;
+    &lt;div class="universal global nav"&gt;
+        ... &lt;!-- header and main --&gt;
+        &lt;nav&gt;&lt;/nav&gt;&lt;!-- this navigation positioned above the page header --&gt;
+        &lt;nav&gt;&lt;/nav&gt;&lt;!-- this navigation positioned below the page header --&gt;
+    &lt;/div&gt;
+    &lt;nav&gt;&lt;/nav&gt;&lt;!-- this navigation stretches at bottom, position fixed all views --&gt;
+&lt;/body&gt;
+</code></pre>
+					
+					</section>
+				
+				</div><!-- end navigation -->
+				
+				<div id="columns">
+				
+					<h2>Text columns</h2>
+
+					<p>Sessile Lite provides a simple way to divide text into columns (up to five). The classes are given below, including a way to exclude the first text element, usually a heading, from the columns.</p>
+
+					<p><strong>Note:</strong> Sessile has removed the top margin from the first text element in each of these, so that the columns align properly at top.</p>
+				
+					<article>
+					
+						<header>
+							<h4>.split.two</h4>
+						</header>
+				
+						<section class="split two">
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions. One drifts west, where a friendly dolphin jumps over it. A whale sings to another. But, as the sun sets, the 10th little rubber duck is left all alone, bobbing helplessly on the big wide sea. Small readers and listeners will empathize with the little duck's plight &ndash; and will rejoice at the heartwarming surprise ending.</p>
+
+							<p>In this poignant and funny story, illustrated with strikingly designed collages, Eric Carle also takes readers on an exciting voyage of discovery. Following the little ducks as they float to all parts of the globe, young explorers can see for themselves the meanings of directional words, and learn simple math concepts such as counting and the use of cardinal and ordinal numbers. Each creature the ducks meet is seen in its own habitat and behaves in a true-to-life manner, offering a very simple first view of biology and geography. All aboard for a world of learning and fun!</p>
+						</section>
+			
+					</article>
+				
+					<article>
+					
+						<header>
+							<h4>.split.three</h4>
+						</header>
+				
+						<section class="split three">
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions. One drifts west, where a friendly dolphin jumps over it. A whale sings to another. But, as the sun sets, the 10th little rubber duck is left all alone, bobbing helplessly on the big wide sea. Small readers and listeners will empathize with the little duck's plight &ndash; and will rejoice at the heartwarming surprise ending.</p>
+
+							<p>In this poignant and funny story, illustrated with strikingly designed collages, Eric Carle also takes readers on an exciting voyage of discovery. Following the little ducks as they float to all parts of the globe, young explorers can see for themselves the meanings of directional words, and learn simple math concepts such as counting and the use of cardinal and ordinal numbers. Each creature the ducks meet is seen in its own habitat and behaves in a true-to-life manner, offering a very simple first view of biology and geography. All aboard for a world of learning and fun!</p>
+						</section>
+			
+					</article>
+				
+					<article>
+					
+						<header>
+							<h4>.split.four</h4>
+						</header>
+				
+						<section class="split four">
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions. One drifts west, where a friendly dolphin jumps over it. A whale sings to another. But, as the sun sets, the 10th little rubber duck is left all alone, bobbing helplessly on the big wide sea. Small readers and listeners will empathize with the little duck's plight &ndash; and will rejoice at the heartwarming surprise ending.</p>
+
+							<p>In this poignant and funny story, illustrated with strikingly designed collages, Eric Carle also takes readers on an exciting voyage of discovery. Following the little ducks as they float to all parts of the globe, young explorers can see for themselves the meanings of directional words, and learn simple math concepts such as counting and the use of cardinal and ordinal numbers. Each creature the ducks meet is seen in its own habitat and behaves in a true-to-life manner, offering a very simple first view of biology and geography. All aboard for a world of learning and fun!</p>
+						</section>
+			
+					</article>
+				
+					<article>
+					
+						<header>
+							<h4>.split.five</h4>
+						</header>
+				
+						<section class="split five">
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions. One drifts west, where a friendly dolphin jumps over it. A whale sings to another. But, as the sun sets, the 10th little rubber duck is left all alone, bobbing helplessly on the big wide sea. Small readers and listeners will empathize with the little duck's plight &ndash; and will rejoice at the heartwarming surprise ending.</p>
+
+							<p>In this poignant and funny story, illustrated with strikingly designed collages, Eric Carle also takes readers on an exciting voyage of discovery. Following the little ducks as they float to all parts of the globe, young explorers can see for themselves the meanings of directional words, and learn simple math concepts such as counting and the use of cardinal and ordinal numbers. Each creature the ducks meet is seen in its own habitat and behaves in a true-to-life manner, offering a very simple first view of biology and geography. All aboard for a world of learning and fun!</p>
+						</section>
+			
+					</article>
+				
+					<article>
+					
+						<header>
+							<h4>.split.three.header</h4>
+						</header>
+				
+						<section class="split three header">
+							<h4><a href="http://www.scholastic.com/teachers/book/10-little-rubber-ducks" target="_blank">About This Book</a></h4>
+							<p>Ahoy! Here we go around the world with 10 little rubber ducks! &ldquo;Ducks overboard!&rdquo; shouts the captain, as a giant wave washes a box of 10 little rubber ducks off his cargo ship and into the sea. The 10 little rubber ducks are swept away in various directions. One drifts west, where a friendly dolphin jumps over it. A whale sings to another. But, as the sun sets, the 10th little rubber duck is left all alone, bobbing helplessly on the big wide sea. Small readers and listeners will empathize with the little duck's plight &ndash; and will rejoice at the heartwarming surprise ending.</p>
+
+							<p>In this poignant and funny story, illustrated with strikingly designed collages, Eric Carle also takes readers on an exciting voyage of discovery. Following the little ducks as they float to all parts of the globe, young explorers can see for themselves the meanings of directional words, and learn simple math concepts such as counting and the use of cardinal and ordinal numbers. Each creature the ducks meet is seen in its own habitat and behaves in a true-to-life manner, offering a very simple first view of biology and geography. All aboard for a world of learning and fun!</p>
+						</section>
+			
+					</article>
+					
+				</div><!-- end columns -->
+			
+				<aside id="explanation">
+				
+					<h2>Here’s an explanation of Life, the Universe, and Everything.<a href="http://www.barnesandnoble.com/w/life-the-universe-and-everything-douglas-adams/1101102086" target="_blank">*</a></h2>
+
+					<p>Okay, so maybe not. But here <em>is</em> an explanation of Sessile Lite:</p>
+
+					<p>Note: this explanation will appear at the bottom of each screen in this sample page!</p>
+
+					<p>Sessile Lite may be used as a standalone library, or as part of the larger Sessile front-end framework (soon to come!).</p>
+
+					<p>Three views are provided: narrow, medium and wide. They are contained within three different CSS files, rather than a single file. The purpose behind this is to allow the developer to use custom media queries when referencing the CSS, applying breakpoint widths that are appropriate to each unique project. <em>Whoa,</em> concept, huh?</p>
+
+					<p>Your CSS links might look something like this:</p>
+
+					<pre><code>&lt;link rel="stylesheet" href="narrow.css"&gt;
+&lt;link rel="stylesheet" href="medium.css" media="screen and (min-width: 40em)"&gt;
+&lt;link rel="stylesheet" href="wide.css" media="screen and (min-width: 60em)"&gt;
+</code></pre>
+
+					<p>&hellip; though again: fully customizable, you can change these to whatever you project requires. If, for instance, you wanted to have the <strong>medium.css</strong> and <strong>wide.css</strong> rules apply at the same view, simply give them the same <code>min-width</code> value.</p>
+
+					<p>Use all three, or just the ones that are useful for your project. Customize everything by linking your own <strong>theme.css</strong> (or whatever) file after these three. And so on.</p>
+
+					<p>Minified versions of each CSS file are provided as well. Minification was accomplished at...</p>
+
+					<h3>The way the layouts work</h3>
+
+					<p>Specifying widths in the classes is generally unnecessary: by default, layouts applied to sub-module elements render in narrow view, module elements (<code>header</code>, <code>footer</code>, <code>aside</code>, or any direct child of <code>article</code>) in medium view, and architectural elements (<code>main</code>, <code>body &gt; div</code>) in wide view. Remember that breakpoints for the three views are completely customizable, so this is much more permissive than it may seem at first flush.</p>
+
+					<p>Layout renders do not by default persist into wider views. To make a <strong>narrow</strong> layout continue into <strong>medium</strong> view, add a class of <code>persistent</code> (example: <code>&lt;ul class="row persistent"&gt;</code>). Layouts in <strong>medium</strong> view automatically persist into <strong>wide</strong> view.</p>
+
+					<p><strong>Warning:</strong> filling elements with content that forces them to grow may cause layouts to break at wider views. This can happen at times when persisting a narrow layout while simultaneously implementing a medium layout. It is recommended to truncate long lines using CSS or JavaScript.</p>
+
+					<p><strong>Another warning:</strong> Since adding margins to an element can increase its calculated size, adding left and/or right margins to layout items can break these layouts. Until CSS provides some version of <code>box-sizing: margin-box</code> or similar, Sessile Lite makes no attempt to solve this problem, leaving it for the larger Sessile framework to fix. Coming soon! In the meantime, padding and borders, and top and/or bottom margins, are fine to use and should not break anything.</p>
+
+					<p><strong>Yet another warning:</strong> Sessile Lite makes heavy use of CSS3 features such as <code>nth-child</code> selectors, <code>flex</code> properties, and <code>calc()</code> measurements, and is therefore not particularly well-suited to supporting legacy browsers on its own. However, the potential exists to use Sessile Lite along with a feature detecter such as <a href="http://modernizr.com/">Modernizr</a> and a polyfill such as <a href="http://flexiejs.com/">Flexie</a> (or your own). As of the current beta version of Sessile Lite, this has not yet been tested.</p>
+
+					<h3>Adding classes to your markup</h3>
+
+					<p>Rather than needing to add a class or more to each and every layout item, simply add those classes to the <em>parent</em> element, and the layout will be applied to its direct children elements. Plenty of examples are given in this sample document. Browse through the links!</p>
+
+					<p><em>Note:</em> In this <strong>sample.html</strong> document, the <code>div</code>s nested directly inside <code>main</code> are completely unnecessary for the layouts; they are there only to provide <code>id</code> targets for the navigation!</p>
+					
+					<p><a href="#top">Top of the page, ma!</a></p>
+
+				</aside><!-- end explanation -->
+			
+				<nav>
+				
+					<nav>
+						<h3>Layouts that wrap</h3>
+						<ul class="wrap persistent">
+							<li><a href="#wrap" class="done">That&rsquo;s a wrap</a></li>
+							<li><a href="#defined-wrap">Defined wrapping layouts</a>
+							<li><a href="#one-column" class="done">One column layouts</a></li>
+						</ul>
+					</nav>
+					<nav>
+						<h3>Layouts that don&rsquo;t</h3>
+						<ul class="wrap persistent">
+							<li><a href="#row-grid" class="done">Row, row, row</a></li>
+							<li><a href="#defined-row">Defined row layouts</a>
+						</ul>
+					</nav>
+					<nav>
+						<h3>Other</h3>
+						<ul class="wrap persistent wide">
+							<li><a href="#navigation">Navigation</a></li>
+							<li><a href="#columns">Text columns</a></li>
+						</ul>
+					</nav>
+					
+				</nav>
+		
+			</main>
+			
+			<nav class="row persistent wide">
+				<span>universal nav</span>
+				<span>universal nav</span>
+				<span>universal nav</span>
+				<span>universal nav</span>
+			</nav>
+			
+			<nav>
+				<ul>
+					<li><a href="#explanation" title="Explanation">Explanation</a></li>
+					<li><a href="http://www.sessile.net" title="Sessile">Sessile website</a></li>
+					<li><a href="http://www.sessile.net/sessilite/cdn.html" title="Sessile">Sessile Lite <abbr title="Content Delivery Network">CDN</abbr></a></li>
+					<li><a href="http://www.sessile.net/sessilite/tutorial.html" title="Sessile">Sessile Lite tutorial</a></li>
+					<li><a href="http://www.github.com/sessilite.git" title="Github">Github</a></li>
+				</ul>
+			</nav>
+			
+			<footer>Sessile &amp; Sessile Lite &copy; 2015 by L. Lawrence Bispo</footer>
+	
+		</div>
+		
+		<nav>
+			<ul>
+				<li>bottom fixed nav</li>
+				<li>bottom fixed nav</li>
+				<li>bottom fixed nav</li>
+			</ul>
+		</nav>
+		
+	</body>
+
+</html>

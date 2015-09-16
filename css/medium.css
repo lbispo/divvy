@@ -1,0 +1,377 @@
+/*** medium.css ***/
+
+header,
+main,
+aside,
+nav { width: 100%; }
+
+article * .row:not(.persistent) { -webkit-flex-flow: column nowrap;
+                                          flex-flow: column nowrap; }
+
+section, section > * { -webkit-flex-direction: column;
+                               flex-direction: column; }
+
+main:not(.one) { display: -webkit-flex; display: flex; }
+
+ul li {
+	text-align: left;
+	padding: 0;
+	border: none;
+}
+
+/** column count **/
+
+.split.two {
+	-webkit-column-count: 2;
+	   -moz-column-count: 2;
+	    -ms-column-count: 2;
+	        column-count: 2;
+}
+
+.split.three {
+	-webkit-column-count: 3;
+	   -moz-column-count: 3;
+	    -ms-column-count: 3;
+	        column-count: 3;
+}
+
+.split.four {
+	-webkit-column-count: 4;
+	   -moz-column-count: 4;
+	    -ms-column-count: 4;
+	        column-count: 4;
+}
+
+.split.five {
+	-webkit-column-count: 5;
+	   -moz-column-count: 5;
+	    -ms-column-count: 5;
+	        column-count: 5;
+}
+
+.split.header > *:first-child {
+	-webkit-column-span: all;
+	column-span: all;
+}
+
+.split.two img,
+.split.three img,
+.split.four img,
+.split.five img { width: 100%; }
+
+.split.header > * + * { margin-top: 0; }
+
+.split:not(.header) > *:first-child { margin-top: 0; }
+
+/** navigation **/
+
+body.nav.top > nav > * {
+	width: 100%;
+	display: -webkit-flex; display: flex;
+	-webkit-flex-flow: row nowrap;
+	        flex-flow: row nowrap;
+	-webkit-justify-content: space-around;
+	        justify-content: space-around;
+}
+
+body > nav:first-child li { -webkit-flex: 1;
+                                    flex: 1; }
+
+body.fixed > nav:first-child {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+nav:not(.hansel) a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+body > div.nav {
+	display: -webkit-flex; display: flex;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+}
+
+body > div.nav > nav { border: thin solid gainsboro; }
+
+/* universal, global, local navigation */
+
+.universal > nav,
+.global > nav,
+.universal > nav ul,
+.global > nav ul {
+	display: -webkit-flex; display: flex;
+	-webkit-flex-flow: row nowrap;
+	        flex-flow: row nowrap;
+	width: 100%;
+}
+.universal > nav > *,
+.global > nav > *,
+.universal > nav li,
+.global > nav li {
+	text-align: center;
+	display: block;
+	-webkit-flex: 1;
+	        flex: 1;
+}
+
+.universal.nav > nav:first-of-type,
+.universal.global.nav > nav:first-of-type,
+.global.nav > *:first-child,
+.local.nav > nav:last-of-type { -webkit-order: -1;
+                                        order: -1; }
+
+.universal.global.nav > *:nth-child(1),
+.global.nav > nav:first-of-type { -webkit-order: 0;
+                                          order: 0; }
+
+.universal.global.nav > nav:nth-of-type(2),
+.global.nav > *:nth-child(2) { -webkit-order: 1;
+                                       order: 1; }
+
+.universal.global.nav > *:nth-child(2),
+.global.nav > nav:nth-of-type(2) { -webkit-order: 2;
+                                           order: 2; }
+
+.global.nav > *:nth-child(2) ~ * { -webkit-order: 3;
+                                           order: 3; }
+
+/** override narrow layouts **/
+
+article.one.left > *:nth-child(n),
+article.one.right > *:nth-child(n) { min-width: unset; min-width: auto; min-width: initial; }
+
+/* persistent */
+
+.row:not(.persistent),
+.wrap:not(.persistent) { -webkit-flex-flow: column wrap;
+                                 flex-flow: column wrap; }
+
+.wrap:not(.persistent) > *,
+.start:not(.persistent),
+.end:not(.persistent),
+.reverse:not(.persistent) { display: block !important; }
+
+/* one column */
+
+article *.one * { -webkit-flex-basis: 100%;
+                          flex-basis: 100%; }
+
+/** one column **/
+
+article.one {
+	display: -webkit-flex; display: flex;
+	-webkit-flex-flow: row wrap;
+	        flex-flow: row wrap;
+}
+
+article.one.right { flex-direction: -webkit-row-reverse !important;
+                    flex-direction: row-reverse; }
+
+article.one.left > *:nth-child(n),
+article.one.right > *:nth-child(n) { min-width: auto; }
+
+/*** modular layout ***/
+
+* > header,
+* > footer { width: 100%; }
+
+section:not(.persistent),
+aside:not(.persistent),
+figure:not(.persistent) { display: block; }
+
+.halves,
+.phi,
+.thirds,
+.thirds,
+.fourths,
+.fifths,
+.sixths,
+.sevenths,
+.eighths,
+.ninths {
+	display: -webkit-flex; display: flex;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+
+body > div, main, article { -webkit-flex-flow: column nowrap;
+                                    flex-flow: column nowrap; }
+
+.ninths,
+.eighths,
+.sevenths,
+.sixths,
+.fifths,
+.fourths,
+.thirds,
+.halves,
+.phi {
+	display: -webkit-flex; display: flex;
+	-webkit-flex-flow: row wrap !important;
+	        flex-flow: row wrap;
+}
+
+/* calc(100% / 9) & multiples */
+
+.ninths > *,
+.eight.ninths.left.header > *:nth-child(2n+3),
+.eight.ninths.right.header > *:nth-child(even),
+.seven.ninths.header > *:nth-child(3n+2) { -webkit-flex-basis: calc(100% / 9);
+                                                   flex-basis: calc(100% / 9); }
+
+.seven.ninths > *:nth-child(3n+2),
+.seven.ninths.header > *:nth-child(3n+3) { -webkit-flex-basis: calc(100% / 9 * 7);
+                                                   flex-basis: calc(100% / 9 * 7); }
+
+.eight.ninths.left > *:nth-child(odd),
+.eight.ninths.right > *:nth-child(even),
+.eight.ninths.left.header > *:nth-child(even),
+.eight.ninths.right.header > *:nth-child(2n+3) { -webkit-flex-basis: calc(100% / 9 * 8);
+                                                         flex-basis: calc(100% / 9 * 8); }
+
+/* 12.5% & multiples */
+
+.eighths > *,
+.seven.eighths.left.header > *:nth-child(2n+3),
+.seven.eighths.right.header > *:nth-child(even),
+.six.eighths.header > *:nth-child(3n+2) { -webkit-flex-basis: 12.5%;
+                                                  flex-basis: 12.5%; }
+
+.seven.eighths.left > *:nth-child(odd),
+.seven.eighths.right > *:nth-child(even),
+.seven.eighths.left.header > *:nth-child(even),
+.seven.eighths.right.header > *:nth-child(2n+3)   { -webkit-flex-basis: 87.5%;
+                                                            flex-basis: 87.5%; }
+
+/* calc(100% / 7) & multiples */
+
+.sevenths > *,
+.six.sevenths.left.header > *:nth-child(2n+3),
+.six.sevenths.right.header > *:nth-child(even),
+.five.sevenths.header > *:nth-child(3n+2) { -webkit-flex-basis: calc(100% / 7);
+                                                    flex-basis: calc(100% / 7); }
+
+.five.sevenths > *:nth-child(3n+2),
+.five.sevenths.header > *:nth-child(3n+3) { -webkit-flex-basis: calc(100% / 7 * 5);
+                                                    flex-basis: calc(100% / 7 * 5); }
+
+.six.sevenths.left > *:nth-child(odd),
+.six.sevenths.right > *:nth-child(even),
+.six.sevenths.left.header > *:nth-child(even),
+.six.sevenths.right.header > *:nth-child(2n+3)  { -webkit-flex-basis: calc(100% / 7 * 6);
+                                                          flex-basis: calc(100% / 7 * 6); }
+
+/* calc(100% / 6) & multiples */
+
+.sixths > *,
+.five.sixths.left.header > *:nth-child(2n+3),
+.five.sixths.right.header > *:nth-child(even),
+.four.sixths.header > *:nth-child(3n+2) { -webkit-flex-basis: calc(100% / 6);
+                                                  flex-basis: calc(100% / 6); }
+
+.five.sixths.left > *:nth-child(odd),
+.five.sixths.right > *:nth-child(even),
+.five.sixths.left.header > *:nth-child(even),
+.five.sixths.right.header > *:nth-child(2n+3)  { -webkit-flex-basis: calc(100% / 6 * 5);
+                                                         flex-basis: calc(100% / 6 * 5); }
+
+/* 20% & multiples */
+
+.fifths > *,
+.four.fifths.left.header > *:nth-child(2n+3),
+.four.fifths.right.header > *:nth-child(even),
+.three.fifths.header > *:nth-child(3n+2) { -webkit-flex-basis: 20%;
+                                                   flex-basis: 20%; }
+
+.three.fifths > *:nth-child(3n+2),
+.three.fifths.header > *:nth-child(3n+3) { -webkit-flex-basis: 60%;
+                                                   flex-basis: 60%; }
+
+.four.fifths.left > *:nth-child(odd),
+.four.fifths.right > *:nth-child(even),
+.four.fifths.left.header > *:nth-child(even),
+.four.fifths.right.header > *:nth-child(2n+3)   { -webkit-flex-basis: 80%;
+                                                          flex-basis: 80%; }
+
+/* 25% & multiples */
+
+.fourths > *,
+.three.fourths.left.header > *:nth-child(2n+3),
+.three.fourths.right.header > *:nth-child(even),
+.two.fourths.header > *:nth-child(3n+2) { -webkit-flex-basis: 25%;
+                                                  flex-basis: 25%; }
+
+.halves > *,
+.two.fourths > *:nth-child(3n+2),
+.two.fourths.header > *:nth-child(3n+3) { -webkit-flex-basis: 50%;
+                                                  flex-basis: 50%; }
+
+.three.fourths.left > *:nth-child(odd),
+.three.fourths.right > *:nth-child(even),
+.three.fourths.left.header > *:nth-child(even),
+.three.fourths.right.header > *:nth-child(2n+3),
+.six.eighths > *:nth-child(3n+2),
+.six.eighths.header > *:nth-child(3n+3) { -webkit-flex-basis: 75%;
+                                                  flex-basis: 75%; }
+
+/*
+.fourths > *,
+.three.fourths.left.header > *:nth-child(2n+3),
+.three.fourths.right.header > *:nth-child(even),
+.two.fourths.header > *:nth-child(3n+2),
+.two.fourths.left.header > *:nth-child(3n+3),
+.two.fourths.left.header > *:nth-child(3n+4),
+.two.fourths.right.header > *:nth-child(3n+2),
+.two.fourths.right.header > *:nth-child(3n+3) { -webkit-flex-basis: 25%;
+                                                        flex-basis: 25%; }
+
+.halves > *,
+.two.fourths.left > *:nth-child(3n+1),
+.two.fourths > *:nth-child(3n+2),
+.two.fourths.right > *:nth-child(3n+3),
+.two.fourths.header > *:nth-child(3n+3),
+.two.fourths.left.header > *:nth-child(3n+2),
+.two.fourths.right.header > *:nth-child(3n+4) { -webkit-flex-basis: 50%;
+                                                        flex-basis: 50%; }
+
+.three.fourths.left > *:nth-child(odd),
+.three.fourths.right > *:nth-child(even),
+.three.fourths.left.header > *:nth-child(even),
+.three.fourths.right.header > *:nth-child(2n+3) { -webkit-flex-basis: 75%;
+                                                          flex-basis: 75%; }
+*/
+
+/* calc(100% / 3) & multiples */
+
+.thirds > *,
+.two.thirds.left.header > *:nth-child(2n+3),
+.two.thirds.right.header > *:nth-child(even) { -webkit-flex-basis: calc(100% / 3);
+                                                       flex-basis: calc(100% / 3); }
+	
+.two.thirds.left > *:nth-child(odd),
+.two.thirds.right > *:nth-child(even),
+.two.thirds.left.header > *:nth-child(even),
+.two.thirds.right.header > *:nth-child(2n+3),
+.four.sixths > *:nth-child(3n+2),
+.four.sixths.header > *:nth-child(3n+3) { -webkit-flex-basis: calc(100% / 3 * 2);
+                                                  flex-basis: calc(100% / 3 * 2); }
+
+/* phi */
+
+.phi > *,
+.phi.left.header > *:nth-child(2n+3),
+.phi.right.header > *:nth-child(even) { -webkit-flex-basis: 38.2%;
+                                                flex-basis: 38.2%; }
+
+.phi.left > *:nth-child(odd),
+.phi.right > *:nth-child(even),
+.phi.left.header > *:nth-child(even),
+.phi.right.header > *:nth-child(2n+3) { -webkit-flex-basis: 61.8%;
+                                                flex-basis: 61.8%; }
